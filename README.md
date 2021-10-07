@@ -1,5 +1,5 @@
 This is a simple miner to create a csv file with all projects' commits (GIT_COMMITS.csv) and changes of files for each commit (GIT_COMMITS_CHANGES.csv). If run on a folder contaning several projects, it creates such files for each projects as well as one master file combining all projects.
-Originally written in Cloud and Web Engineering Research group of Tampere University to create the [Technical Debt Dataset](https://github.com/clowee/The-Technical-Debt-Dataset)
+Originally written in [CloudSEA.AI](https://research.tuni.fi/cloudsea/) Research group of Tampere University to create the [Technical Debt Dataset](https://github.com/clowee/The-Technical-Debt-Dataset)
 
 The program expects to find a file call ```CONST.py``` in the parent directory of the cloned repository (ie in the same folder where ```git clone git@github.com:bakhtos/GitCommitsandChanges.git``` was run) which defines at least these constants:
 
