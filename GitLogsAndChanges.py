@@ -12,6 +12,11 @@ from CONST import *
 # Get all files' and folders' names in the given directory directory
 filenames = os.listdir(ABS_REPO_PATH)
 
+try:
+    os.makedirs(ABS_SAVE_PATH)
+except FileExistsError:
+    pass
+    
 result = []
 for filename in filenames:  # loop through all the files and folders
     if os.path.isdir(
@@ -38,6 +43,10 @@ file2.write(header2)
 for index, project_dir in enumerate(result): 
     projectDirAbsPath = os.path.join(ABS_REPO_PATH, project_dir)
     projectSaveAbsPath = os.path.join(ABS_SAVE_PATH, project_dir)
+    try:
+        os.makedirs(projectSaveAbsPath)
+    except FileExistsError:
+        pass
     # Files per project
     filep1name = os.path.join(projectSaveAbsPath, 'GIT_COMMITS.csv')
     filep2name = os.path.join(projectSaveAbsPath, 'GIT_COMMITS_CHANGES.csv')
