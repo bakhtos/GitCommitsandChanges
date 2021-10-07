@@ -12,11 +12,17 @@ from CONST import *
 # Get all files' and folders' names in the given directory directory
 filenames = os.listdir(ABS_REPO_PATH)
 
+# Raise error if a wrong folder was given
+if filenames == []:
+    raise FileNotFoundError("The specified folder has no folders inside.")
+
+# Create the output folder if it does not exist
 try:
     os.makedirs(ABS_SAVE_PATH)
 except FileExistsError:
     pass
     
+# Gather all projects
 result = []
 for filename in filenames:  # loop through all the files and folders
     if os.path.isdir(
@@ -24,6 +30,7 @@ for filename in filenames:  # loop through all the files and folders
             os.path.join(os.path.abspath(ABS_REPO_PATH), filename)):  
         result.append(filename)
         print(filename)
+
 # Go over projects in alphabetical order
 result.sort()
 
